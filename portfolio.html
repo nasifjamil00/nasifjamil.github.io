@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Nasif Jamil - Geoscientist & Research Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a4d2e;
+            --secondary: #4f772d;
+            --accent: #90a955;
+            --earth: #c9b037;
+            --light: #ecf39e;
+            --dark: #0d1f14;
+            --gray: #5a6c57;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            background: linear-gradient(135deg, #0d1f14 0%, #1a4d2e 50%, #2d5a3d 100%);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            z-index: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px);
+            animation: slide 20s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(70px); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header/Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 600;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ecf39e 0%, #90a955 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 35px;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--earth) 0%, var(--accent) 100%);
+            color: var(--dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(201, 176, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Decorative elements */
+        .hero-decoration {
+            position: absolute;
+            right: -100px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(144,169,85,0.15) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translateY(-50%) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-50%) scale(1.1); opacity: 0.5; }
+        }
+
+        /* Section styling */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--earth), var(--accent));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin: 30px auto 0;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--earth), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(144,169,85,0.3);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--earth) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 600;
+        }
+
+        /* Publications Section */
+        .publications-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .publication-item {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-left: 4px solid var(--accent);
+            padding: 30px 40px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease-out forwards;
+        }
+
+        .publication-item:nth-child(1) { animation-delay: 0.1s; }
+        .publication-item:nth-child(2) { animation-delay: 0.2s; }
+        .publication-item:nth-child(3) { animation-delay: 0.3s; }
+        .publication-item:nth-child(4) { animation-delay: 0.4s; }
+        .publication-item:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .publication-item:hover {
+            background: rgba(255,255,255,0.08);
+            border-left-color: var(--earth);
+            transform: translateX(10px);
+        }
+
+        .publication-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--light);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+
+        .publication-authors {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .publication-journal {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .publication-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: var(--earth);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .publication-link:hover {
+            color: var(--light);
+            transform: translateX(5px);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .skill-category {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(144,169,85,0.3);
+        }
+
+        .skill-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--earth);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: rgba(144,169,85,0.2);
+            color: var(--light);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid rgba(144,169,85,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(144,169,85,0.3);
+            transform: scale(1.05);
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .award-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .award-card::before {
+            content: '🏆';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.1;
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(201,176,55,0.5);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .award-title {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--earth);
+            margin-bottom: 12px;
+        }
+
+        .award-description {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        /* Leadership Section */
+        .leadership-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .leadership-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--earth), var(--accent));
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 8px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--earth);
+            box-shadow: 0 0 0 4px rgba(201,176,55,0.2);
+        }
+
+        .timeline-role {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 8px;
+        }
+
+        .timeline-org {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-period {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .timeline-description {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: rgba(255,255,255,0.03);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(144,169,85,0.3);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .contact-value {
+            color: rgba(255,255,255,0.9);
+            word-break: break-word;
+        }
+
+        .contact-value a {
+            color: var(--earth);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-value a:hover {
+            color: var(--light);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2rem;
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-subtitle">Geoscientist & Applied Geophysics Specialist</div>
+                <h1>Md Nasif Jamil</h1>
+                <p class="hero-description">
+                    MS in Applied Geophysics with expertise in geospatial analysis, remote sensing, and sustainable resource management. Published researcher passionate about integrating geophysical methods to solve environmental challenges.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#publications" class="btn btn-primary">View Publications</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-decoration"></div>
+            <div class="scroll-indicator"></div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">Published Research Papers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.45</div>
+                    <div class="stat-label">MS CGPA (out of 4.00)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">7.0</div>
+                    <div class="stat-label">IELTS Overall Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Leadership Positions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Research Publications</h2>
+                <p class="section-subtitle">Peer-reviewed contributions to geosciences, focusing on coastal dynamics, land use changes, and geospatial analysis</p>
+            </div>
+
+            <div class="publications-list">
+                <div class="publication-item">
+                    <div class="publication-title">Assessment of Coastal Dynamics and Landuse changes of Sonadia Island using Geospatial techniques and Seismic Interpretation</div>
+                    <div class="publication-authors">Md. Nasif Jamil, Md. Anwar Hossain Bhuiyan, Dr. Md. Bodruddoza Mia, Afsana Rahman Supria</div>
+                    <div class="publication-journal">Next Research Journal • 2025</div>
+                    <a href="https://doi.org/10.1016/j.nexres.2025.100861" class="publication-link" target="_blank">View Publication →</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Spatiotemporal Changes of Land Use, Land Surface Temperature and Urban Heat Island in Bogura District Using Multispectral Satellite Images</div>
+                    <div class="publication-authors">Md Rashidul Islam, Md Bodruddoza Mia, Md Nasif Jamil, Masuma Chowdhury, ASM Woobaidullah</div>
+                    <div class="publication-journal">Journal of the Asiatic Society of Bangladesh, Science • 2025</div>
+                    <a href="https://doi.org/10.3329/jasbs.v51i1.82788" class="publication-link" target="_blank">View Publication →</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Spatiotemporal Analysis of Land Use-Land Cover Changes in Pleistocene Uplifted Madhupur Tract Region using Geospatial Techniques</div>
+                    <div class="publication-authors">Md. Mainul Islam, Md Nasif Jamil, Dr. Md. Bodruddoza Mia</div>
+                    <div class="publication-journal">Dhaka University Journal of Earth and Environmental Sciences • 2025</div>
+                    <a href="https://doi.org/10.3329/dujees.v14i1.83013" class="publication-link" target="_blank">View Publication →</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Integrated Geophysical Analysis of Rangpur Saddle: Insights on Tectonics and Magnetic Mineral Potential of North-Western Bangladesh</div>
+                    <div class="publication-authors">Tushar M.T.R., Ashraf A., Alam M.M., Jamil M.N., Karim S., Shahjahan M., Bhuiyan M.A.H.</div>
+                    <div class="publication-journal">EGUsphere [preprint] • 2024</div>
+                    <a href="https://doi.org/10.5194/egusphere-2024-3733" class="publication-link" target="_blank">View Publication →</a>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-title">Assessing Land Use-Land Cover Changes and Riverbank Dynamics in the Upper Meghna River Using Geospatial Techniques</div>
+                    <div class="publication-authors">Md. Jowel Rana, Md. Nasif Jamil, Md. Bodruddoza Mia</div>
+                    <div class="publication-journal">Bangladesh Journal of Geology • Accepted</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Advanced proficiency in geophysical software, geospatial analysis, and data processing</p>
+            </div>
+
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Geospatial & GIS</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">ArcGIS</span>
+                        <span class="skill-tag">Erdas Imagine</span>
+                        <span class="skill-tag">Remote Sensing</span>
+                        <span class="skill-tag">Spatial Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Geophysical Software</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Geosoft Oasis Montaj</span>
+                        <span class="skill-tag">Petrel Software</span>
+                        <span class="skill-tag">Seismic Interpretation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Programming & Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">RStudio</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Data Processing</span>
+                        <span class="skill-tag">Statistical Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Achievements Section -->
+    <section id="awards">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Awards & Recognition</h2>
+                <p class="section-subtitle">Recognized for academic excellence and contributions to geosciences</p>
+            </div>
+
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-title">L. Austin Weeks Undergraduate Grant</div>
+                    <div class="award-description">Awarded by AAPG Foundation to high-achieving students in petroleum geosciences (2021)</div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-title">Egypt SEG Field Camp 2023</div>
+                    <div class="award-description">Selected for marine geophysical surveys field camp focusing on climate change impacts on marine habitats</div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-title">Students Leadership Symposium</div>
+                    <div class="award-description">Selected participant in IMAGE 2022, Houston, Texas - SEG's premier student leadership event</div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-title">Petromania Contest Winner</div>
+                    <div class="award-description">First place in Puzzle Solving Contest, organized by SPE Dhaka University Student Chapter (2020)</div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-title">Geo-Modelling Quiz Runner-up</div>
+                    <div class="award-description">1st runner-up in quiz session of "Geo-Modelling Jump Start: Software experience" lecture program</div>
+                </div>
+
+                <div class="award-card">
+                    <div class="award-title">Government Scholarships</div>
+                    <div class="award-description">Awarded government scholarships for academic excellence in HSC and 5th grade</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Leadership Experience</h2>
+                <p class="section-subtitle">Proven track record of leading scientific societies and student organizations</p>
+            </div>
+
+            <div class="leadership-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-role">President</div>
+                    <div class="timeline-org">University of Dhaka Geophysical Society (SEG Student Chapter)</div>
+                    <div class="timeline-period">2022</div>
+                    <div class="timeline-description">Led the premier geophysical society, organizing international conferences, workshops, and field programs. Coordinated with global SEG chapters and managed executive committee operations.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Executive Committee Member</div>
+                    <div class="timeline-org">University of Dhaka Geophysical Society (SEG Student Chapter)</div>
+                    <div class="timeline-period">2019-2021</div>
+                    <div class="timeline-description">Contributed to organizing Geo-Vertex international virtual conference, student presentations, and technical workshops connecting Bangladesh and India SEG chapters.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">President</div>
+                    <div class="timeline-org">Geo-Photography Club (GPC)</div>
+                    <div class="timeline-period">2022</div>
+                    <div class="timeline-description">Directed club activities promoting geological photography and visual documentation of earth sciences field work across Bangladesh.</div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-role">Executive Committee Member</div>
+                    <div class="timeline-org">Dhaka University Science Society (DUSS)</div>
+                    <div class="timeline-period">2018-2022</div>
+                    <div class="timeline-description">Executed lecture programs and workshops on contemporary scientific issues, expanding science education across various communities in Bangladesh.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Open to collaboration opportunities, research partnerships, and industry positions</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">
+                        <a href="mailto:nasifjamil00@gmail.com">nasifjamil00@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">+880 1634 883505</div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">
+                        <a href="https://linkedin.com" target="_blank">Connect on LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🎓</div>
+                    <div class="contact-label">Google Scholar</div>
+                    <div class="contact-value">
+                        <a href="https://scholar.google.com" target="_blank">View Publications</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Md Nasif Jamil. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
